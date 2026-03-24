@@ -1,0 +1,186 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#f5f7fa;
+color:#333;
+line-height:1.6;
+}
+
+
+/* HEADER */
+
+header{
+background:#2c3e50;
+padding:15px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+
+header h1{
+color:white;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#1abc9c;
+}
+
+
+/* HERO SECTION */
+
+.hero{
+height:80vh;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1558944351-cf7c6f3c7b9a');
+background-size:cover;
+background-position:center;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h2{
+font-size:48px;
+max-width:700px;
+}
+
+
+/* BUTTONS */
+
+.btn{
+background:#1abc9c;
+padding:12px 25px;
+color:white;
+text-decoration:none;
+border-radius:6px;
+display:inline-block;
+margin-top:20px;
+border:none;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#16a085;
+transform:scale(1.05);
+}
+
+
+/* SECTIONS */
+
+.section{
+padding:60px 80px;
+text-align:center;
+}
+
+.section h2{
+margin-bottom:20px;
+}
+
+
+/* CARD LAYOUT */
+
+.card-container{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.card{
+background:white;
+padding:20px;
+width:250px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:0.3s;
+cursor:pointer;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 6px 15px rgba(0,0,0,0.15);
+}
+
+
+/* FORMS */
+
+input, textarea{
+padding:10px;
+width:250px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+textarea{
+resize:none;
+}
+
+
+/* VIDEO */
+
+video{
+max-width:100%;
+border-radius:10px;
+margin-top:20px;
+}
+
+
+/* FOOTER */
+
+footer{
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width:768px){
+
+header{
+flex-direction:column;
+gap:10px;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.section{
+padding:40px 20px;
+}
+
+.hero h2{
+font-size:32px;
+}
+
+.card-container{
+flex-direction:column;
+align-items:center;
+}
+
+}

@@ -1,0 +1,179 @@
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+
+    <title>PetCare - Contact</title>
+
+    <link rel="stylesheet" href="syle.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBDY2HN2LK"></script>
+
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XBDY2HN2LK');
+    </script>
+
+    </head>
+
+
+    <body>
+
+
+    <header>
+
+    <h1>PetCare</h1>
+
+    <nav>
+
+    <a href="index.html"
+    onclick="trackEvent('navigation_click',{page:'home'})">
+    Home
+    </a>
+
+    <a href="about.html"
+    onclick="trackEvent('navigation_click',{page:'about'})">
+    About
+    </a>
+
+    <a href="services.html"
+    onclick="trackEvent('navigation_click',{page:'services'})">
+    Services
+    </a>
+
+    <a href="blog.html"
+    onclick="trackEvent('navigation_click',{page:'blog'})">
+    Blog
+    </a>
+
+    <a href="contact.html"
+    onclick="trackEvent('navigation_click',{page:'contact'})">
+    Contact
+    </a>
+
+    </nav>
+
+    </header>
+
+
+
+    <!-- CONTACT FORM -->
+
+    <section class="section">
+
+    <h2>Contact Us</h2>
+
+    <form
+    onsubmit="trackEvent('contact_form_submit',{form_name:'contact_form'})">
+
+    <input
+    type="text"
+    placeholder="Your Name"
+    required
+    onfocus="trackEvent('form_start',{field:'name'})"
+    style="padding:10px;width:250px">
+
+    <br><br>
+
+    <input
+    type="email"
+    placeholder="Your Email"
+    required
+    onfocus="trackEvent('form_start',{field:'email'})"
+    style="padding:10px;width:250px">
+
+    <br><br>
+
+    <textarea
+    placeholder="Your Message"
+    required
+    onfocus="trackEvent('form_start',{field:'message'})"
+    style="padding:10px;width:250px;height:100px">
+
+    </textarea>
+
+    <br><br>
+
+    <button type="submit" class="btn">
+    Submit
+    </button>
+
+    </form>
+
+    </section>
+
+
+
+    <footer>
+
+    <p>© 2026 PetCare. All rights reserved.</p>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+
+
+    <!-- GLOBAL EVENTS -->
+
+    <script>
+
+    /* Scroll tracking */
+
+    window.addEventListener('scroll', function(){
+
+    let scrollPercent = (window.scrollY /
+    (document.body.scrollHeight - window.innerHeight)) * 100;
+
+    if(scrollPercent > 50){
+
+    gtag('event','scroll_50_percent');
+
+    }
+
+    });
+
+
+
+    /* Outbound link tracking */
+
+    document.querySelectorAll("a").forEach(link=>{
+
+    if(link.hostname !== window.location.hostname){
+
+    link.addEventListener("click",()=>{
+
+    gtag('event','outbound_click',{
+
+    link_url:link.href
+
+    });
+
+    });
+
+    }
+
+    });
+
+    /* Time on page tracking */
+
+    setTimeout(function(){
+
+    gtag('event','engaged_15_seconds',{
+    page_location: window.location.pathname
+    });
+
+    },15000);
+
+    </script>
+
+
+
+    </body>
+
+    </html>

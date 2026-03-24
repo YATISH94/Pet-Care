@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>PetCare - Home</title>
+
+<link rel="stylesheet" href="syle.css">
+
+    <!-- Google Analytics -->
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-XBDY2HN2LK"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XBDY2HN2LK');
+    </script> -->
+
+
+
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T4KJ82GX');</script> -->
+    <!-- End Google Tag Manager -->
+
+</head>
+
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4KJ82GX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+
+    <h1>PetCare</h1>
+
+    <nav>
+
+    <a href="index.html"
+    onclick="trackEvent('navigation_click',{page:'home'})">
+    Home
+    </a>
+
+    <a href="about.html"
+    onclick="trackEvent('navigation_click',{page:'about'})">
+    About
+    </a>
+
+    <a href="services.html"
+    onclick="trackEvent('navigation_click',{page:'services'})">
+    Services
+    </a>
+
+    <a href="blog.html"
+    onclick="trackEvent('navigation_click',{page:'blog'})">
+    Blog
+    </a>
+
+    <a href="contact.html"
+    onclick="trackEvent('navigation_click',{page:'contact'})">
+    Contact
+    </a>
+
+    </nav>
+
+    </header>
+
+
+
+    <!-- SEARCH EVENT -->
+
+    <section class="section">
+
+    <h2>Search Pets</h2>
+
+    <input
+    type="text"
+    id="searchInput"
+    placeholder="Search for pets">
+
+    <button onclick="siteSearch()" class="btn">
+    Search
+    </button>
+
+    </section>
+
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+    <div>
+
+    <h2>Find Your Perfect Companion</h2>
+
+    <a href="services.html"
+    class="btn"
+    onclick="trackEvent('adopt_cta_click',{location:'homepage'})">
+    Adopt Now
+    </a>
+
+    </div>
+
+    </section>
+
+
+
+    <!-- SERVICES -->
+
+    <section class="section">
+
+    <h2>Our Services</h2>
+
+    <div class="card-container">
+
+    <div class="card">
+    <h3>Pet Adoption</h3>
+    <p>Find loving pets.</p>
+    </div>
+
+    <div class="card">
+    <h3>Grooming</h3>
+    <p>Professional grooming.</p>
+    </div>
+
+    <div class="card">
+    <h3>Vet Care</h3>
+    <p>Trusted veterinary services.</p>
+    </div>
+
+    </div>
+
+    </section>
+
+
+
+    <!-- DOWNLOAD EVENT -->
+
+    <section class="section">
+
+    <h2>Pet Adoption Guide</h2>
+
+    <p>Download our beginner guide before adopting a pet.</p>
+
+    <a href="pet-adoption-guide.pdf"
+    download
+    class="btn"
+    onclick="downloadGuide()">
+
+    Download Adoption Guide
+
+    </a>
+
+    </section>
+
+
+
+    <!-- OUTBOUND LINKS -->
+
+    <section class="section">
+
+    <h2>Pet Care Resources</h2>
+
+    <a href="https://www.aspca.org"
+    target="_blank">
+    ASPCA Animal Care
+    </a>
+
+    <br><br>
+
+    <a href="https://www.petfinder.com"
+    target="_blank">
+    Pet Adoption Portal
+    </a>
+
+    </section>
+
+    <section class="section">
+
+    <h2>Subscribe for Pet Care Tips</h2>
+
+    <p>Get weekly advice on pet health and training.</p>
+
+    <form onsubmit="trackEvent('newsletter_signup',{location:'homepage'})">
+
+    <input
+    type="email"
+    placeholder="Enter your email"
+    required
+    style="padding:10px;width:250px">
+
+    <br><br>
+
+    <button type="submit" class="btn">
+    Subscribe
+    </button>
+
+    </form>
+
+    </section>
+
+    <footer>
+
+    <p>© 2026 PetCare. All rights reserved.</p>
+
+    </footer>
+
+
+
+    <!-- SCRIPT FILE -->
+
+    <script src="script.js"></script>
+
+
+
+    <!-- GLOBAL EVENTS -->
+
+    <script>
+
+    /* Scroll tracking */
+
+    window.addEventListener('scroll', function(){
+
+    let scrollPercent = (window.scrollY /
+    (document.body.scrollHeight - window.innerHeight)) * 100;
+
+    if(scrollPercent > 50){
+
+    gtag('event','scroll_50_percent');
+
+    }
+
+    });
+
+
+
+    /* Outbound link tracking */
+
+    document.querySelectorAll("a").forEach(link=>{
+
+    if(link.hostname !== window.location.hostname){
+
+    link.addEventListener("click",()=>{
+
+    gtag('event','outbound_click',{
+
+    link_url:link.href
+
+    });
+
+    });
+
+    }
+
+    });
+
+    /* Time on page tracking */
+
+    setTimeout(function(){
+
+    gtag('event','engaged_15_seconds',{
+    page_location: window.location.pathname
+    });
+
+    },15000);
+
+    </script>
+
+
+
+    </body>
+
+    </html>
