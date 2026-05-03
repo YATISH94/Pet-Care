@@ -1,190 +1,170 @@
-    <!DOCTYPE html>
-    <html>
+<!DOCTYPE html>
+<html>
 
-    <head>
+<head>
 
-    <title>PetCare - Contact</title>
+<title>PetCare - Contact</title>
 
-    <link rel="stylesheet" href="syle.css">
+<link rel="stylesheet" href="style.css">
 
-    <!-- Google Analytics -->
-    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-XBDY2HN2LK"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T4KJ82GX');</script>
 
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XBDY2HN2LK');
-    </script>-->
+</head>
 
-     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-T4KJ82GX');</script> 
-    <!-- End Google Tag Manager -->
+<body>
 
-    </head>
+<!-- GTM (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4KJ82GX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
-    <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4KJ82GX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> 
-    <!-- End Google Tag Manager (noscript) -->
+<header>
 
-    <header>
+<h1>PetCare</h1>
 
-    <h1>PetCare</h1>
+<nav>
 
-    <nav>
+<a href="index.html"
+onclick="trackEvent('navigation_click',{page:'home'})">Home</a>
 
-    <a href="index.html"
-    onclick="trackEvent('navigation_click',{page:'home'})">
-    Home
-    </a>
+<a href="about.html"
+onclick="trackEvent('navigation_click',{page:'about'})">About</a>
 
-    <a href="about.html"
-    onclick="trackEvent('navigation_click',{page:'about'})">
-    About
-    </a>
+<a href="services.html"
+onclick="trackEvent('navigation_click',{page:'services'})">Services</a>
 
-    <a href="services.html"
-    onclick="trackEvent('navigation_click',{page:'services'})">
-    Services
-    </a>
+<a href="blog.html"
+onclick="trackEvent('navigation_click',{page:'blog'})">Blog</a>
 
-    <a href="blog.html"
-    onclick="trackEvent('navigation_click',{page:'blog'})">
-    Blog
-    </a>
+<a href="contact.html"
+onclick="trackEvent('navigation_click',{page:'contact'})">Contact</a>
 
-    <a href="contact.html"
-    onclick="trackEvent('navigation_click',{page:'contact'})">
-    Contact
-    </a>
+</nav>
 
-    </nav>
+</header>
 
-    </header>
 
 
+<!-- CONTACT FORM -->
 
-    <!-- CONTACT FORM -->
+<section class="section">
 
-    <section class="section">
+<h2>Contact Us</h2>
 
-    <h2>Contact Us</h2>
+<form id="contactForm">
 
-    <form
-    onsubmit="trackEvent('contact_form_submit',{form_name:'contact_form'})">
+<input type="text"
+placeholder="Your Name"
+required
+onfocus="trackEvent('form_start',{field:'name'})"
+style="padding:10px;width:250px">
 
-    <input
-    type="text"
-    placeholder="Your Name"
-    required
-    onfocus="trackEvent('form_start',{field:'name'})"
-    style="padding:10px;width:250px">
+<br><br>
 
-    <br><br>
+<input type="email"
+placeholder="Your Email"
+required
+onfocus="trackEvent('form_start',{field:'email'})"
+style="padding:10px;width:250px">
 
-    <input
-    type="email"
-    placeholder="Your Email"
-    required
-    onfocus="trackEvent('form_start',{field:'email'})"
-    style="padding:10px;width:250px">
+<br><br>
 
-    <br><br>
+<textarea
+placeholder="Your Message"
+required
+onfocus="trackEvent('form_start',{field:'message'})"
+style="padding:10px;width:250px;height:100px"></textarea>
 
-    <textarea
-    placeholder="Your Message"
-    required
-    onfocus="trackEvent('form_start',{field:'message'})"
-    style="padding:10px;width:250px;height:100px">
+<br><br>
 
-    </textarea>
+<button type="submit" class="btn">
+Submit
+</button>
 
-    <br><br>
+</form>
 
-    <button type="submit" class="btn">
-    Submit
-    </button>
 
-    </form>
+<!-- SUCCESS MESSAGE -->
 
-    </section>
+<div id="successMessage" style="display:none; margin-top:20px; color:green; font-size:18px;">
+✅ Thank you! Your form has been submitted successfully.
+</div>
 
+</section>
 
 
-    <footer>
 
-    <p>© 2026 PetCare. All rights reserved.</p>
+<footer>
+<p>© 2026 PetCare. All rights reserved.</p>
+</footer>
 
-    </footer>
 
 
+<script src="script.js"></script>
 
-    <script src="script.js"></script>
 
 
+<!-- FORM HANDLING SCRIPT -->
 
-    <!-- GLOBAL EVENTS -->
+<script>
 
-    <script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
 
-    /* Scroll tracking */
+e.preventDefault();  // stop page reload
 
-   /* window.addEventListener('scroll', function(){
+// fire GA4 event
+trackEvent('contact_form_submit',{form_name:'contact_form'});
 
-    let scrollPercent = (window.scrollY /
-    (document.body.scrollHeight - window.innerHeight)) * 100;
+// hide form
+this.style.display = "none";
 
-    if(scrollPercent > 50){
+// show success message
+document.getElementById("successMessage").style.display = "block";
 
-    gtag('event','scroll_50_percent');
+});
 
-    }
+</script>
 
-    });
-    */
 
 
-    /* Outbound link tracking */
+<!-- GLOBAL EVENTS -->
 
-    document.querySelectorAll("a").forEach(link=>{
+<script>
 
-    if(link.hostname !== window.location.hostname){
+/* Outbound link tracking */
 
-    link.addEventListener("click",()=>{
+document.querySelectorAll("a").forEach(link=>{
 
-    gtag('event','outbound_click',{
+if(link.hostname !== window.location.hostname){
 
-    link_url:link.href
+link.addEventListener("click",()=>{
+gtag('event','outbound_click',{
+link_url:link.href
+});
+});
 
-    });
+}
 
-    });
+});
 
-    }
 
-    });
+/* Time on page */
 
-    /* Time on page tracking */
+setTimeout(function(){
 
-    setTimeout(function(){
+gtag('event','engaged_15_seconds',{
+page_location: window.location.pathname
+});
 
-    gtag('event','engaged_15_seconds',{
-    page_location: window.location.pathname
-    });
+},15000);
 
-    },15000);
+</script>
 
-    </script>
 
-
-
-    </body>
-
-    </html>
+</body>
+</html>
